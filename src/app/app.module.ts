@@ -1,3 +1,4 @@
+// 這個頁面是 Angular 的主要模組，它會匯入所有的 Angular 模組和元件，並且設定應用程式的基本設定。
 import { NgModule } from '@angular/core';
 import {
   JsonPipe,
@@ -24,12 +25,28 @@ import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { DefaultLayoutComponent } from './container';
+import { HomePageComponent } from './views/pages/home-page/home-page.component';
+import { CorporateEsgDashBoardComponent } from './views/pages/serviceContent/corporate-esg-dash-board/corporate-esg-dash-board.component';
+import { IndustryEsgDashBoardComponent } from './views/pages/serviceContent/industry-esg-dash-board/industry-esg-dash-board.component';
+import { SustainableGPTComponent } from './views/pages/serviceContent/sustainable-gpt/sustainable-gpt.component';
+import { NewsPageComponent } from './views/pages/news-page/news-page.component';
+import { TechniquesComponent } from './views/pages/techniques/techniques.component';
+import { ContactUsComponent } from './views/pages/contact-us/contact-us.component';
 
 const APP_CONTAINERS = [];
 
 @NgModule({
   declarations: [
     // ...APP_CONTAINERS
+    DefaultLayoutComponent,
+    HomePageComponent,
+    CorporateEsgDashBoardComponent,
+    IndustryEsgDashBoardComponent,
+    SustainableGPTComponent,
+    NewsPageComponent,
+    TechniquesComponent,
+    ContactUsComponent
   ],
   imports: [
     JsonPipe,

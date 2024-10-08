@@ -1,3 +1,4 @@
+// 這個檔案是用來匯入所有的頁面模組，並且設定共用的服務與元件
 import { NgModule } from "@angular/core";
 import { CommonModule , JsonPipe , AsyncPipe } from "@angular/common";
 import { IconSetService } from '@coreui/icons-angular'
