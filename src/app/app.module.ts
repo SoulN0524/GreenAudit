@@ -1,5 +1,5 @@
 // 這個頁面是 Angular 的主要模組，它會匯入所有的 Angular 模組和元件，並且設定應用程式的基本設定。
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import {
   JsonPipe,
   AsyncPipe,
@@ -11,6 +11,7 @@ import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { NgScrollbarModule } from 'ngx-scrollbar';
+import { LayoutModule } from '@angular/cdk/layout';
 // Removed duplicate import
 import { AppComponent } from './app.component';
 import { IconSetService } from '@coreui/icons-angular';
@@ -53,6 +54,7 @@ const APP_CONTAINERS = [];
     AsyncPipe,
     DecimalPipe,
     BrowserModule,
+    LayoutModule,
     RouterModule,
     AppRoutingModule,
     HttpClientModule,
@@ -80,6 +82,7 @@ const APP_CONTAINERS = [];
     provideNativeDateAdapter(),
     provideAnimationsAsync(),
   ],
-  bootstrap: [],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

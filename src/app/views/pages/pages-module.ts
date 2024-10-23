@@ -7,9 +7,10 @@ import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import { DateAdapter , MAT_DATE_LOCALE } from '@angular/material/core';
 
 import { PagesRoutingModule } from './pages-routing.module';
+import { DefaultLayoutComponent } from "../../container";
 
 @NgModule({
-    declarations:[],
+    declarations:[DefaultLayoutComponent],
     providers:[
         IconSetService,
         provideNativeDateAdapter(),
@@ -26,7 +27,7 @@ import { PagesRoutingModule } from './pages-routing.module';
         PagesRoutingModule,
     ],
     exports:[
-        
+        DefaultLayoutComponent
     ]
 })
 export class PagesModule{}

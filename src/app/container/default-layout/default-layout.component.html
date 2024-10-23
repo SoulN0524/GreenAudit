@@ -1,2 +1,19 @@
-<p>fuck</p>
-<p>hello world</p>
+<div class="layout">
+  <div class="sidebar">
+    <ul>
+      <li><a routerLink="/homepage">Home</a></li>
+      <li><a routerLink="/services/companyDashboard">Company Dashboard</a></li>
+      <li>
+        <a routerLink="/services/industryDashboard">Industry Dashboard</a>
+      </li>
+      <li><a routerLink="/services/sustainableGPT">sustainableGPT</a></li>
+
+      <li><a routerLink="/news">News</a></li>
+      <li><a routerLink="/techniques">Techniques</a></li>
+      <li><a routerLink="/contactUs">Contact Us</a></li>
+    </ul>
+  </div>
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

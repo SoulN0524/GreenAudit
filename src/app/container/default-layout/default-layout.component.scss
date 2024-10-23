@@ -1,0 +1,37 @@
+/* 設置 Flexbox 佈局 */
+.layout {
+  display: flex;               /* 使用 Flexbox */
+  height: 100vh;               /* 設置佈局高度為視口高度 */
+}
+
+.sidebar {
+  width: 250px;                /* 側邊欄的寬度 */
+  background-color: #333;      /* 側邊欄背景顏色 */
+  color: white;                /* 側邊欄文字顏色 */
+  padding: 20px;               /* 側邊欄內邊距 */
+  box-sizing: border-box;
+}
+
+.sidebar ul {
+  list-style-type: none;       /* 去除列表符號 */
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  color: white;                /* 連結文字顏色 */
+  text-decoration: none;       /* 去除下劃線 */
+}
+
+.sidebar ul li a:hover {
+  background-color: #575757;   /* 滑鼠懸停時的背景顏色 */
+}
+
+.main-content {
+  flex-grow: 1;                /* 主內容區域佔據剩餘空間 */
+  padding: 20px;               /* 主內容的內邊距 */
+  background-color: #f4f4f4;   /* 主內容區背景顏色 */
+}
