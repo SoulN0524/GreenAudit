@@ -7,4 +7,11 @@ import { navItems } from './Nav.server';
 })
 export class DefaultLayoutComponent {
   public navItems:any[] = navItems;
+
+  isServiceOpen = false;
+
+  toggleService() {
+    this.isServiceOpen = !this.isServiceOpen;
+    console.log(this.isServiceOpen);
+  }
 }

@@ -34,13 +34,15 @@ import { SustainableGPTComponent } from './views/pages/serviceContent/sustainabl
 import { NewsPageComponent } from './views/pages/news-page/news-page.component';
 import { TechniquesComponent } from './views/pages/techniques/techniques.component';
 import { ContactUsComponent } from './views/pages/contact-us/contact-us.component';
+import { ButtonModule, CardModule } from '@coreui/angular';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 const APP_CONTAINERS = [];
 
 @NgModule({
   declarations: [
     // ...APP_CONTAINERS
-    DefaultLayoutComponent,
     HomePageComponent,
     CorporateEsgDashBoardComponent,
     IndustryEsgDashBoardComponent,
@@ -54,6 +56,10 @@ const APP_CONTAINERS = [];
     AsyncPipe,
     DecimalPipe,
     BrowserModule,
+    CardModule,
+    MatButtonModule,
+    ButtonModule,
+    MatCardModule,
     LayoutModule,
     RouterModule,
     AppRoutingModule,
@@ -83,6 +89,6 @@ const APP_CONTAINERS = [];
     provideAnimationsAsync(),
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
-  bootstrap: [AppComponent],
+  // bootstrap: [AppComponent],
 })
 export class AppModule {}

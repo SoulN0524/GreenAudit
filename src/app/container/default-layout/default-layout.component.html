@@ -1,16 +1,57 @@
 <div class="layout">
   <div class="sidebar">
     <ul>
-      <li><a routerLink="/homepage">Home</a></li>
-      <li><a routerLink="/services/companyDashboard">Company Dashboard</a></li>
       <li>
-        <a routerLink="/services/industryDashboard">Industry Dashboard</a>
+        <a routerLink="/homepage">
+          <span class="text-cn">首頁</span>
+          <span class="text-en">Home</span>
+        </a>
       </li>
-      <li><a routerLink="/services/sustainableGPT">sustainableGPT</a></li>
+      <li>
+        <a (click)="toggleService()"> 
+          <span class="text-cn">服務內容</span>
+          <span class="text-en">Services</span>
+        </a>
+        <ul [ngClass]="{ 'open-menu': isServiceOpen, 'closed-menu': !isServiceOpen }">
+          <li>
+            <a routerLink="/services/companyDashboard">
+              <span class="text-cn">各公司ESG儀表板</span>
+              <span class="text-en">Company Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/services/industryDashboard">
+              <span class="text-cn">百工百業ESG儀表板</span>
+              <span class="text-en">Industry Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/services/sustainableGPT">
+              <span class="text-cn">碧綠知音 永續GPT</span>
+              <span class="text-en">Sustainable GPT</span>
+            </a>
+          </li>
+        </ul>
+      </li>
 
-      <li><a routerLink="/news">News</a></li>
-      <li><a routerLink="/techniques">Techniques</a></li>
-      <li><a routerLink="/contactUs">Contact Us</a></li>
+      <li>
+        <a routerLink="/news">
+          <span class="text-cn">新聞資訊</span>
+          <span class="text-en">News</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/techniques">
+          <span class="text-cn">技術實現</span>
+          <span class="text-en">Techniques</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/contactUs">
+          <span class="text-cn">聯絡我們</span>
+          <span class="text-en">Contact Us</span>
+        </a>
+      </li>
     </ul>
   </div>
   <div class="main-content">
