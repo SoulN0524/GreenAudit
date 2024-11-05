@@ -1,45 +1,65 @@
 /* 設置 Flexbox 佈局 */
 .layout {
-  display: flex;               // 使用 Flexbox
-  height: 100vh;               // 設置佈局高度為視口高度
+  display: flex; // 使用 Flexbox
+  height: 100vh; // 設置佈局高度為視口高度
 
   .sidebar {
-    width: 250px;                // 側邊欄的寬度
-    background-color: #07132A;   // 側邊欄背景顏色
-    color: white;                // 側邊欄文字顏色
-    padding: 20px;               // 側邊欄內邊距
+    width: 250px; // 側邊欄的寬度
+    background-color: rgba($color: #07132a, $alpha: 0.95); // 側邊欄背景顏色
+    color: white; // 側邊欄文字顏色
+    padding: 20px; // 側邊欄內邊距
     box-sizing: border-box;
+    transition: transform 0.3s ease-in-out; // 動畫效果
+    transform: translateX(0);
+    position: fixed;
+    overflow-y: auto;
+    height: 100%;
+
+    div {
+      text-align: center;
+      img {
+        width: 85%;
+        margin-bottom: 20px;
+      }
+    }
 
     ul {
-      list-style-type: none;     // 去除列表符號
+      list-style-type: none; // 去除列表符號
       padding: 0;
 
       li {
         margin: 15px 0;
 
         a {
-          color: rgb(255, 255, 255);   // 連結文字顏色
-          text-decoration: none;       // 去除下劃線
+          color: rgb(255, 255, 255); // 連結文字顏色
+          text-decoration: none; // 去除下劃線
           cursor: pointer;
+          display: flex;
+          align-items: center;
+
+          svg {
+            margin-right: 10px;
+          }
 
           &:hover {
             background-color: #575757; // 滑鼠懸停時的背景顏色
           }
 
           .text-cn {
-            font-size: 16px;         // 設置中文大小
-            display: block;          // 保持中文和英文在不同行
+            font-size: 16px; // 設置中文大小
+            display: block; // 保持中文和英文在不同行
           }
 
           .text-en {
-            font-size: 12px;         // 設置英文大小
-            color: #ccc;             // 可設置成灰色以區分
-            display: block;          // 保持中文和英文在不同行
+            font-size: 12px; // 設置英文大小
+            color: #ccc; // 可設置成灰色以區分
+            display: block; // 保持中文和英文在不同行
+            text-align: left;
           }
         }
 
         ul {
-          margin-left: 20px;         // 向右縮進子項
+          margin-left: 20px; // 向右縮進子項
           list-style-type: none;
 
           &.open-menu {
@@ -55,8 +75,13 @@
   }
 
   .main-content {
-    flex-grow: 1;                // 主內容區域佔據剩餘空間
-    padding: 20px;               // 主內容的內邊距
-    background-color: #f4f4f4;   // 主內容區背景顏色
+    margin-left: 250px;
+    position: fixed;
+    height: 100%;
+    width: calc(100% - 250px);
+    overflow-y: auto;
+    flex-grow: 1; // 主內容區域佔據剩餘空間
+    padding: 20px; // 主內容的內邊距
+    background: linear-gradient(135deg, #defbd6, #8bebf1); // 主內容區背景顏色
   }
 }
