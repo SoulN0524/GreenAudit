@@ -1,5 +1,5 @@
 <div class="layout">
-  <div class="sidebar">
+  <div class="sidebar" [ngClass]="{ 'collapsed': isSidebarCollapsed }">
     <div>
       <img src="../../../assets/ESGAudit.png" alt="圖標" />
     </div>
@@ -168,7 +168,7 @@
       </li>
     </ul>
   </div>
-  <div class="main-content">
+  <div class="main-content" [ngClass]="{ 'expanded': isSidebarCollapsed }">
     <router-outlet></router-outlet>
   </div>
 </div>
