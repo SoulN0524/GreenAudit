@@ -13,27 +13,27 @@ div {
     font-style: italic;
     color: rgba($color: #07132a, $alpha: 0.95);
   }
-  .button{
+  .button {
     display: flex;
     justify-content: center;
     margin-top: 50px;
-    button{
-      width:20%;
+    button {
+      width: 20%;
       background-color: rgba($color: #07132a, $alpha: 0.95);
       color: white;
-      border: none;
+      border: 2px solid rgba($color: #ffffff, $alpha: 0.95);
       padding: 10px 20px;
-      border-radius: 5px;
+      border-radius: 20px;
       cursor: pointer;
       font-size: 16px;
       font-weight: 500;
       transition: 0.3s;
-      &:hover{
+      &:hover {
         background-color: #ffffff;
         color: rgba($color: #07132a, $alpha: 0.95);
       }
     }
-    .right{
+    .right {
       margin-left: 20px;
     }
   }
