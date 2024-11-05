@@ -1,5 +1,5 @@
 <div class="layout">
-  <div class="sidebar" [ngClass]="{ 'collapsed': isSidebarCollapsed }">
+  <div class="sidebar" [ngClass]="{ collapsed: isSidebarCollapsed }">
     <div>
       <img src="../../../assets/ESGAudit.png" alt="圖標" />
     </div>
@@ -10,10 +10,22 @@
             width="24"
             height="24"
             viewBox="0 0 24 24"
-            fill="none"
+            fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="currentColor" />
+            <defs>
+              <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop
+                  offset="0%"
+                  style="stop-color: #defbd6; stop-opacity: 1"
+                />
+                <stop
+                  offset="100%"
+                  style="stop-color: #8bebf1; stop-opacity: 1"
+                />
+              </linearGradient>
+            </defs>
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
           </svg>
           <div>
             <span class="text-cn">首頁</span>
@@ -168,7 +180,8 @@
       </li>
     </ul>
   </div>
-  <div class="main-content" [ngClass]="{ 'expanded': isSidebarCollapsed }">
+  <div class="main-content" [ngClass]="{ expanded: isSidebarCollapsed }">
+    <button class="hamburger-menu" (click)="toggleSidebar()">&#9776;</button>
     <router-outlet></router-outlet>
   </div>
 </div>

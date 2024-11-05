@@ -28,4 +28,8 @@ export class DefaultLayoutComponent {
     this.isServiceOpen = !this.isServiceOpen;
     console.log(this.isServiceOpen);
   }
+  
+  toggleSidebar() {
+    this.isSidebarCollapsed = !this.isSidebarCollapsed;
+  }
 }

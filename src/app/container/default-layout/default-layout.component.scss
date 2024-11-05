@@ -47,20 +47,35 @@
           }
 
           &:hover {
-            background-color: #575757; // 滑鼠懸停時的背景顏色
+            svg {
+              fill: url(#gradient);
+            }
+            .text-cn{
+              background: linear-gradient(135deg, #defbd6, #8bebf1);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              font-weight: 900;
+            }
+            .text-en {
+              background: linear-gradient(135deg, #defbd6, #8bebf1);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              font-weight: 600;
+            }
           }
 
           .text-cn {
             font-size: 16px; // 設置中文大小
             display: block; // 保持中文和英文在不同行
-            font-weight: bolder;
+            font-weight: 600;
           }
 
           .text-en {
             font-size: 12px; // 設置英文大小
-            color: #ccc; // 可設置成灰色以區分
+            color: #f0f0f0; // 可設置成灰色以區分
             display: block; // 保持中文和英文在不同行
             text-align: left;
+            font-weight: 500;
           }
         }
 
@@ -89,11 +104,22 @@
     flex-grow: 1; // 主內容區域佔據剩餘空間
     padding: 20px; // 主內容的內邊距
     background: linear-gradient(135deg, #defbd6, #8bebf1); // 主內容區背景顏色
-    transition: margin-left 0.3s , width 0.3s ; // 動畫效果
+    transition: margin-left 0.3s, width 0.3s; // 動畫效果
 
     &.expanded {
       margin-left: 0;
       width: 100%;
+    }
+
+    .hamburger-menu {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 200; // 確保按鈕在側邊欄之上
     }
   }
 
