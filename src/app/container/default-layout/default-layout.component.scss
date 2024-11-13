@@ -112,11 +112,13 @@
     }
 
     .hamburger-menu {
-      position: absolute;
-      top: 20px;
-      left: 20px;
+      position: sticky;
+      top: 0px;
+      left: 0px;
+      padding: 10px;
+      border: 2px solid rgb(07, 19, 42);
+      border-radius: 10px;
       background: none;
-      border: none;
       font-size: 24px;
       cursor: pointer;
       z-index: 200; // 確保按鈕在側邊欄之上

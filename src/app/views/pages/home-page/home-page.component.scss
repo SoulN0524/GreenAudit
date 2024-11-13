@@ -1,22 +1,47 @@
 @import "@coreui/coreui/scss/coreui";
 
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    translate: 20px;
+  }
+  100% {
+    opacity: 1;
+    translate: 0px;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    translate: -20px;
+  }
+  100% {
+    opacity: 1;
+    translate: 0px;
+  }
+}
+
 div {
-  h1 {
-    margin-top: 100px;
+  .title {
+    margin-top: 150px;
     font-weight: 900;
     text-align: center;
     color: rgba($color: #07132a, $alpha: 0.95);
+    font-size: 55px;
   }
-  p {
+  .intro {
+    margin-top: 20px;
     font-weight: 500;
     text-align: center;
     font-style: italic;
     color: rgba($color: #07132a, $alpha: 0.95);
+    font-size: 20px;
   }
   .button {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 75px;
     button {
       width: 20%;
       background-color: rgba($color: #07132a, $alpha: 0.95);
@@ -35,6 +60,50 @@ div {
     }
     .right {
       margin-left: 20px;
+    }
+  }
+  hr {
+    margin-top: 150px;
+  }
+  div {
+    h1 {
+      margin-top: 120px;
+      font-weight: 900;
+      text-align: center;
+      color: rgba($color: #07132a, $alpha: 0.95);
+      font-size: 40px;
+    }
+    p {
+      width: 60%;
+      font-weight: 500;
+      text-align: center;
+      color: rgba($color: #07132a, $alpha: 0.95);
+      font-size: 20px;
+      margin: 20px auto 0;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 30px;
+    }
+    div {
+      margin-top: 10px;
+      display: flex;
+      div.fade-in-on-scroll {
+        animation: fadeInLeft 2s ease-in-out;
+        text-align: center;
+        flex: 1;
+        display: inline;
+        img {
+        }
+        h3 {
+          text-align: center;
+          margin: 20px 100px 0px 100px;
+          padding: 10px 0px;
+          font-weight: 900;
+          background-color: azure;
+          border-radius: 30px;
+          font-size: 20px;
+        }
+      }
     }
   }
 }
