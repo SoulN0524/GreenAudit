@@ -37,6 +37,7 @@ import { ContactUsComponent } from './views/pages/contact-us/contact-us.componen
 import { ButtonModule, CardModule } from '@coreui/angular';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { FormsModule } from '@angular/forms';
 
 const APP_CONTAINERS = [];
 
@@ -56,14 +57,15 @@ const APP_CONTAINERS = [];
     AsyncPipe,
     DecimalPipe,
     BrowserModule,
+    HttpClientModule,
     CardModule,
     MatButtonModule,
+    FormsModule,
     ButtonModule,
     MatCardModule,
     LayoutModule,
     RouterModule,
     AppRoutingModule,
-    HttpClientModule,
     NgScrollbarModule,
     MatDatepickerModule,
     BrowserAnimationsModule,

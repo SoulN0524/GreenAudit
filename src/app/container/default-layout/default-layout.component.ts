@@ -17,11 +17,15 @@ export class DefaultLayoutComponent {
   }
 
   ngOnInit() {
-    this.checkWindowSize();
+    if (typeof window !== 'undefined') {
+      this.checkWindowSize();
+    }
   }
 
   checkWindowSize() {
-    this.isSidebarCollapsed = window.innerWidth < 1000;
+    if (typeof window !== 'undefined') {
+      this.isSidebarCollapsed = window.innerWidth < 1000;
+    }
   }
 
   toggleService() {

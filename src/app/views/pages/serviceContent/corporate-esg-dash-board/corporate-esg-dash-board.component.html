@@ -1,1 +1,78 @@
-<p>corporate-esg-dash-board works!</p>
+<div>
+  <div class="input">
+    <input type="text" placeholder="公司代號 ex:2330" formControlName = "stockName"/>
+    <input type="text" placeholder="民國年度 ex.111" formControlName = "year"/>
+    <button>查詢</button>
+  </div>
+  <h1>{{ corporate }} - {{ year }} 年度ESG儀表板</h1>
+  <hr />
+  <div class="container1">
+    <div class="leftblock">
+      <p>股名/股號</p>
+      <h3>{{ stockName }} {{ stockNumber }}</h3>
+    </div>
+    <div class="rightblock">
+      <p>公司基本資訊</p>
+      <h3><span>資本額：</span>{{ capital }}</h3>
+      <h3><span>董事長：</span>{{ chairman }}</h3>
+      <h3><span>總經理：</span>{{ president }}</h3>
+    </div>
+  </div>
+  <div class="container2">
+    <div class="leftblock">
+      <p>含有此標的之ESG型ETF</p>
+      <h3>{{ etfName }}</h3>
+    </div>
+    <div class="rightblock">
+      <p>主要經營業務</p>
+      <h3>{{ businessScope }}</h3>
+    </div>
+  </div>
+  <div class="container3">
+    <div class="pie-container">
+      <h1>
+        E Score：<span>{{ EScore }}</span
+        >/10
+      </h1>
+      <div class="pie">
+        <div class="pie-m">E</div>
+      </div>
+      <h3>{{ EAward }}</h3>
+      <h3>{{ EHighScore }}</h3>
+    </div>
+    <div class="pie-container">
+      <h1>
+        S Score：<span>{{ SScore }}</span
+        >/10
+      </h1>
+      <div class="pie">
+        <div class="pie-m">S</div>
+      </div>
+      <h3>{{ SAward }}</h3>
+      <h3>{{ SHighScore }}</h3>
+    </div>
+    <div class="pie-container">
+      <h1>
+        G Score：<span>{{ GScore }}</span
+        >/10
+      </h1>
+      <div class="pie">
+        <div class="pie-m">G</div>
+      </div>
+      <h3>{{ GAward }}</h3>
+      <h3>{{ GHighScore }}</h3>
+    </div>
+  </div>
+  <div class="container4">
+    <p>台積電現況與趨勢 永續GPT摘要與總結</p>
+    <h3>
+      台積電在2022年的ESG評分顯示出強勁的社會和治理表現。此外，台積電被推薦為兩個ESG相關的ETF，進一步確認了其在永續發展方面的領導地位。針對台積電給出以下兩條建議：
+      加強供應鏈的永續合作：台積電應繼續在其供應鏈管理中推行更嚴格的環境和社會標準，確保所有供應商都遵循最佳實踐，從而提升整體產業的永續水平。這包括進一步推動供應商使用可再生能源和實施嚴格的環保措施。<br />
+      持續推動創新和技術發展：作為半導體產業的領導者，台積電可以進一步利用其創新能力，開發新技術來降低製造過程中的能源消耗和材料浪費。同時，加強研發在減少碳足跡、水資源管理及循環經濟方面的應用技術。
+    </h3>
+  </div>
+  <div class="container5">
+    <h1>新聞資訊</h1>
+    <hr />
+  </div>
+</div>
