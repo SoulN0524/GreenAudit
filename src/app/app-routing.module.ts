@@ -10,7 +10,7 @@ import { SustainableGPTComponent } from './views/pages/serviceContent/sustainabl
 import { NewsPageComponent } from './views/pages/news-page/news-page.component';
 import { TechniquesComponent } from './views/pages/techniques/techniques.component';
 import { ContactUsComponent } from './views/pages/contact-us/contact-us.component';
-
+import { PagesModule } from './views/pages/pages-module';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'homepage', pathMatch: 'full' },
@@ -56,7 +56,7 @@ export const routes: Routes = [
       {
         path: 'pages',
         loadChildren: () =>
-          import('./views/pages/pages-module').then((m: any) => m.PagesModule),
+          import('./views/pages/pages-module').then((m) => m.PagesModule),
       },
     ],
   },
@@ -64,7 +64,12 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'enabled',
+      anchorScrolling: 'enabled',
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

@@ -7,9 +7,13 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-corporate-esg-dash-board',
   templateUrl: './corporate-esg-dash-board.component.html',
-  styleUrl: './corporate-esg-dash-board.component.scss',
+  styleUrls: ['./corporate-esg-dash-board.component.scss'],
+  standalone: false,
 })
 export class CorporateEsgDashBoardComponent {
+
+  constructor(public http:HttpClient,public api: ApiService) {}
+
   corporate: string = '台灣積體電路製造股份有限公司';
   year: string = '112';
   stockNumber: string = '2330';
@@ -30,16 +34,30 @@ export class CorporateEsgDashBoardComponent {
   SHighScore: string = '薪酬福利PR95';
   GHighScore: string = '政治影響指數PR93';
 
-  // constructor(public api: ApiService, private http: HttpClient) {}
-
-  // fetchCorporateData(){
-  //   const endPoint = 'https://openapi.twse.com.tw/v1/opendata/t187ap46_L_9';
-  //   return this.http.get(endPoint , {responseType: 'text'})
-  // }
-
-  // getCorporateData(){
-  //   this.fetchCorporateData().subscribe((data) => {
-  //     console.log(data);
-  //   });
-  // }
+  fetchData() {
+    const url = "https://openapi.twse.com.tw/v1/opendata/t187ap03_P";
+    this.api.cureGet(url).subscribe((res: any) => {
+      // Assuming res is an array of objects and we need the first object
+      const data = res[0];
+      this.corporate = data.corporate || this.corporate;
+      this.year = data.year || this.year;
+      this.stockNumber = data.stockNumber || this.stockNumber;
+      this.stockName = data.stockName || this.stockName;
+      this.capital = data.capital || this.capital;
+      this.chairman = data.chairman || this.chairman;
+      this.president = data.president || this.president;
+      this.etfName = data.etfName || this.etfName;
+      this.businessScope = data.businessScope || this.businessScope;
+      this.EScore = data.EScore || this.EScore;
+      this.SScore = data.SScore || this.SScore;
+      this.GScore = data.GScore || this.GScore;
+      this.EAward = data.EAward || this.EAward;
+      this.SAward = data.SAward || this.SAward;
+      this.GAward = data.GAward || this.GAward;
+      this.EHighScore = data.EHighScore || this.EHighScore;
+      this.SHighScore = data.SHighScore || this.SHighScore;
+      this.GHighScore = data.GHighScore || this.GHighScore;
+      console.log(data);
+    });
+  }
 }

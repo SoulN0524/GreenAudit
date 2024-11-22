@@ -3,7 +3,8 @@ import { navItems } from './Nav.server';
 @Component({
   selector: 'app-default-layout',
   templateUrl: './default-layout.component.html',
-  styleUrls: ['./default-layout.component.scss']
+  styleUrls: ['./default-layout.component.scss'],
+  standalone: false,
 })
 export class DefaultLayoutComponent {
   public navItems:any[] = navItems;

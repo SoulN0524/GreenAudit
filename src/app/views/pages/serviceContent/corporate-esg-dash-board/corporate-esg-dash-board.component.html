@@ -1,8 +1,8 @@
 <div>
   <div class="input">
-    <input type="text" placeholder="公司代號 ex:2330" formControlName = "stockName"/>
-    <input type="text" placeholder="民國年度 ex.111" formControlName = "year"/>
-    <button>查詢</button>
+    <input type="text" placeholder="公司代號 ex:2330" />
+    <input type="text" placeholder="民國年度 ex.111" />
+    <button (click)="fetchData()">查詢</button>
   </div>
   <h1>{{ corporate }} - {{ year }} 年度ESG儀表板</h1>
   <hr />

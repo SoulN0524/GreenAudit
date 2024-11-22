@@ -9,7 +9,7 @@ import {
 } from '@angular/common';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient, provideHttpClient } from '@angular/common/http';
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import { LayoutModule } from '@angular/cdk/layout';
 // Removed duplicate import
@@ -57,7 +57,6 @@ const APP_CONTAINERS = [];
     AsyncPipe,
     DecimalPipe,
     BrowserModule,
-    HttpClientModule,
     CardModule,
     MatButtonModule,
     FormsModule,
@@ -80,15 +79,11 @@ const APP_CONTAINERS = [];
       provide: LocationStrategy,
       useClass: HashLocationStrategy,
     },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: HttpClient,
-      multi: true,
-    },
     Title,
     IconSetService,
     provideNativeDateAdapter(),
     provideAnimationsAsync(),
+    provideHttpClient(),
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
   // bootstrap: [AppComponent],

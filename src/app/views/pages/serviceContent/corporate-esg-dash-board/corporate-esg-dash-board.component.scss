@@ -172,13 +172,12 @@ div {
 .container3 {
   display: flex;
   justify-content: space-around; /* Space out the pie charts */
-  align-items: center; /* Center align the pie charts */
+  align-items: stretch; /* Center align the pie charts */
   .pie-container {
     background-color: #ffffff; /* Set background color to white */
     border-radius: 10px; /* Add rounded corners */
     padding: 40px 20px; /* Add some padding */
     margin: 15px 7.5px; /* Add some margin */
-    height: 450px;
     width: 30%;
     display: flex;
     align-items: center;
@@ -186,6 +185,7 @@ div {
     flex-direction: column;
   }
   h1 {
+    font-size: 25px;
     margin: 0px 0px 30px 0px;
     span {
       color: #5b9d62;
@@ -242,7 +242,7 @@ div {
   }
   h3 {
     font-weight: 700;
-    font-size: 25px;
+    font-size: 20px;
   }
 }
 
