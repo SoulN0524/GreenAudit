@@ -1,1 +1,77 @@
-<p>industry-esg-dash-board works!</p>
+<div>
+  <div class="input">
+    <select>
+      <option value="technology">Technology</option>
+      <option value="finance">Finance</option>
+      <option value="healthcare">Healthcare</option>
+      <option value="energy">Energy</option>
+      <option value="manufacturing">Manufacturing</option>
+    </select>
+    <button class="submit-button">Submit</button>
+  </div>
+  <div class="container2">
+    <div class="leftblock">
+      <p>產業特別指標</p>
+      <div class="specialIndex" *ngFor="let specialIndex of specialIndexs">
+        <h3>{{ specialIndex }}</h3>
+      </div>
+    </div>
+    <div class="rightblock">
+      <p>主要經營業務</p>
+      <h3>{{ this.industryScope }}</h3>
+      <h3></h3>
+    </div>
+  </div>
+  <div class="container3">
+    <canvas id="myChart"></canvas>
+  </div>
+  <div class="container4">
+    <h2>資訊服務業各年度ESG前三名模範企業</h2>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>2019</th>
+          <th>2020</th>
+          <th>2021</th>
+          <th>2022</th>
+          <th>2023</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1st</td>
+          <td>精誠 / 26.5</td>
+          <td>精誠 / 26.75</td>
+          <td>精誠 / 26</td>
+          <td>邁特達 / 26.5</td>
+          <td>精誠 / 25.5</td>
+        </tr>
+        <tr>
+          <td>2nd</td>
+          <td>三商電 / 22.75</td>
+          <td>邁特達 / 25</td>
+          <td>零壹 / 24.75</td>
+          <td>精誠 / 26</td>
+          <td>邁特達 / 22.5</td>
+        </tr>
+        <tr>
+          <td>3rd</td>
+          <td>邁特達 / 21.5</td>
+          <td>三商電 / 23.5</td>
+          <td>三商電 / 24</td>
+          <td>零壹 / 25</td>
+          <td>關貿 / 21</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="container5">
+    <p>資訊服務業現況與趨勢 永續GPT摘要與總結</p>
+    <h3>
+      在分析過去幾年的ESG得分表現後，精誠公司持續領先，展示了其在環境、社會和治理方面的一致性和高水平表現。邁特達公司顯示出顯著的年度改善，而三商電公司則保持穩定表現。新進公司零壹和關貿在最近一年首次進入前三名，突顯了其ESG努力和戰略聚焦的初步成果。<br />
+      資訊服務業應持續加強ESG實踐，特別是在數據安全和倫理方面，並積極與所有利益相關者進行溝通，以透明化報告和改善社會貢獻。
+    </h3>
+  </div>
+</div>

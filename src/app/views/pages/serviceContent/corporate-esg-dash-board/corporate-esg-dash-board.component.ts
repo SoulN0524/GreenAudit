@@ -3,16 +3,25 @@ import { ApiService } from '../../../../common/services/api.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FormsModule } from '@angular/forms';
+import { NgFor } from '@angular/common';
+
+interface News {
+  title: string;
+  content: string;
+  href: string;
+  date: string;
+  source: string;
+}
 
 @Component({
   selector: 'app-corporate-esg-dash-board',
   templateUrl: './corporate-esg-dash-board.component.html',
   styleUrls: ['./corporate-esg-dash-board.component.scss'],
-  standalone: false,
+  standalone: true,
+  imports: [NgFor],
 })
 export class CorporateEsgDashBoardComponent {
-
-  constructor(public http:HttpClient,public api: ApiService) {}
+  constructor(public http: HttpClient, public api: ApiService) {}
 
   corporate: string = '台灣積體電路製造股份有限公司';
   year: string = '112';
@@ -33,31 +42,34 @@ export class CorporateEsgDashBoardComponent {
   EHighScore: string = '生物多樣性PR99';
   SHighScore: string = '薪酬福利PR95';
   GHighScore: string = '政治影響指數PR93';
+  newsList: News[] = [
+    {
+      title: 'News Title 1',
+      content: 'Content of news item 1.',
+      href: '#',
+      date: '2023-01-01',
+      source: 'Source 1',
+    },
+    {
+      title: 'News Title 2',
+      content: 'Content of news item 2.',
+      href: '#',
+      date: '2023-01-02',
+      source: 'Source 2',
+    },
+    {
+      title: 'News Title 3',
+      content: 'Content of news item 3.',
+      href: '#',
+      date: '2023-01-03',
+      source: 'Source 3',
+    },
+  ];
 
   fetchData() {
-    const url = "https://openapi.twse.com.tw/v1/opendata/t187ap03_P";
-    this.api.cureGet(url).subscribe((res: any) => {
-      // Assuming res is an array of objects and we need the first object
-      const data = res[0];
-      this.corporate = data.corporate || this.corporate;
-      this.year = data.year || this.year;
-      this.stockNumber = data.stockNumber || this.stockNumber;
-      this.stockName = data.stockName || this.stockName;
-      this.capital = data.capital || this.capital;
-      this.chairman = data.chairman || this.chairman;
-      this.president = data.president || this.president;
-      this.etfName = data.etfName || this.etfName;
-      this.businessScope = data.businessScope || this.businessScope;
-      this.EScore = data.EScore || this.EScore;
-      this.SScore = data.SScore || this.SScore;
-      this.GScore = data.GScore || this.GScore;
-      this.EAward = data.EAward || this.EAward;
-      this.SAward = data.SAward || this.SAward;
-      this.GAward = data.GAward || this.GAward;
-      this.EHighScore = data.EHighScore || this.EHighScore;
-      this.SHighScore = data.SHighScore || this.SHighScore;
-      this.GHighScore = data.GHighScore || this.GHighScore;
-      console.log(data);
+    const url = 'https://openapi.twse.com.tw/v1/opendata/t187ap03_P';
+    this.api.cureGet(url).subscribe((res) => {
+      console.log(res);
     });
   }
 }

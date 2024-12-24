@@ -74,5 +74,10 @@
   <div class="container5">
     <h1>新聞資訊</h1>
     <hr />
+    <div *ngFor="let newsItem of newsList">
+      <h3><a [href]="newsItem.href">{{ newsItem.title }}</a></h3>
+      <p>{{ newsItem.content }}</p>
+      <p><small>{{ newsItem.date }} - {{ newsItem.source }}</small></p>
+    </div>
   </div>
 </div>

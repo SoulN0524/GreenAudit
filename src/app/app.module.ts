@@ -38,6 +38,7 @@ import { ButtonModule, CardModule } from '@coreui/angular';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 const APP_CONTAINERS = [];
 
@@ -45,14 +46,12 @@ const APP_CONTAINERS = [];
   declarations: [
     // ...APP_CONTAINERS
     HomePageComponent,
-    CorporateEsgDashBoardComponent,
-    IndustryEsgDashBoardComponent,
-    SustainableGPTComponent,
     NewsPageComponent,
     TechniquesComponent,
     ContactUsComponent
   ],
   imports: [
+    CommonModule,
     JsonPipe,
     AsyncPipe,
     DecimalPipe,

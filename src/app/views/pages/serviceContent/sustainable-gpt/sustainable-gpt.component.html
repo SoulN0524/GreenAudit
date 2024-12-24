@@ -1,1 +1,49 @@
-<p>sustainable-gpt works!</p>
+<div>
+  <div class="service-content-title">
+    <h3>碧綠知音 永續GPT</h3>
+  </div>
+  <div class="chatbot-page">
+    <!-- 左側面板 -->
+    <div class="left-panel">
+      <div class="file-uploader">
+        <span>已嵌入檔案：</span>
+        <div>
+          <input type="file" id="fileInput" multiple />
+        </div>
+      </div>
+
+      <div class="chat-history">
+        <span>歷史訊息</span>
+        <div class="history-item">歷史訊息 1</div>
+        <div class="history-item">歷史訊息 2</div>
+        <div class="history-item">歷史訊息 3</div>
+      </div>
+    </div>
+
+    <!-- 右側聊天界面 -->
+    <div class="chat-interface">
+      <div class="chat-header">聊天介面</div>
+      <div class="chat-content" id="chatContent">
+        <div
+          *ngFor="let message of messages"
+          [ngClass]="{
+            user: message.sender === 'user',
+            bot: message.sender === 'bot'
+          }"
+          class="message"
+        >
+          {{ message.text }}
+        </div>
+      </div>
+      <div class="chat-input">
+        <input
+          type="text"
+          id="chatInput"
+          placeholder="輸入訊息..."
+          [(ngModel)]="chatInput"
+        />
+        <button id="sendButton" (click)="sendMessage()">發送</button>
+      </div>
+    </div>
+  </div>
+</div>
