@@ -4,7 +4,8 @@ h3,
 p,
 button,
 input,
-div {
+div,
+pre {
   color: #003169;
   font-family: "Noto Serif TC", "Spline sans";
 }
@@ -25,7 +26,7 @@ div {
   font-family: Arial, sans-serif;
 
   .left-panel {
-    width: 30%;
+    flex: 0 0 30%;
     background-color: #f4f4f4;
     border: 3px solid #003169;
     border-right: 1px solid #ddd;
@@ -44,6 +45,7 @@ div {
 
       span {
         margin-bottom: 15px;
+        font-weight: 700;
       }
 
       div {
@@ -60,10 +62,6 @@ div {
           background-color: #ffffff;
           cursor: pointer;
           width: 100%;
-
-          &:hover {
-            background-color: #adf1c8;
-          }
         }
       }
     }
@@ -78,6 +76,8 @@ div {
       span {
         display: block;
         margin-bottom: 15px;
+        font-weight: 700;
+        text-align: center;
       }
 
       .history-item {
@@ -95,13 +95,14 @@ div {
   }
 
   .chat-interface {
-    flex: 1 1 auto;
+    flex: 1 1 70%;
     display: flex;
     flex-direction: column;
     border: 3px solid #003169;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 10px;
     border-left: none;
+    overflow: hidden;
 
     .chat-header {
       text-align: center;
@@ -124,22 +125,26 @@ div {
         margin-bottom: 10px;
         padding: 10px 15px;
         border-radius: 10px;
-        max-width: 60%;
         word-wrap: break-word;
+        display: inline-block;
 
         &.user {
           background-color: #e0f7fa;
           align-self: flex-end;
-          text-align: right;
-          margin-right: 0;
-          margin-left: 0;
+          text-align: left;
+          margin-left: auto;
+          font-weight: 700;
+          max-width: 70%;
+          float: right;
+          clear: both;
         }
 
         &.bot {
-          background-color: #e8eaf6;
           align-self: flex-start;
-          margin-right: 0;
-          margin-left: 0;
+          margin-right: auto;
+          text-align: left;
+          float: left;
+          clear: both;
         }
       }
     }
@@ -154,28 +159,25 @@ div {
 
       input {
         flex: 1 1 auto;
+        font-weight: 700;
         padding: 10px;
         border: 1px solid #ccc;
         border-radius: 5px;
         outline: none;
 
         &:focus {
-          border-color: #007bff;
+          border-color: #003169;
         }
       }
 
       button {
         margin-left: 10px;
-        background-color: #007bff;
+        background-color: #003169;
         color: white;
         border: none;
         padding: 10px 20px;
         border-radius: 5px;
         cursor: pointer;
-
-        &:hover {
-          background-color: #0056b3;
-        }
       }
     }
   }

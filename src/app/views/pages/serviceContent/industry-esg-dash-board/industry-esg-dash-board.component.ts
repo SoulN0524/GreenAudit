@@ -26,6 +26,7 @@ export class IndustryEsgDashBoardComponent implements OnInit {
       this.createChart();
     }
   }
+  
   createChart(): void {
     const ctx = document.getElementById('myChart') as HTMLCanvasElement;
     new Chart(ctx, {
@@ -62,7 +63,7 @@ export class IndustryEsgDashBoardComponent implements OnInit {
               'rgba(255, 159, 64, 1)',
               'rgba(100, 100, 100, 1)',
             ],
-            borderWidth: 1,
+            borderWidth: 3,
           },
         ],
       },
