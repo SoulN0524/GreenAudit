@@ -103,7 +103,7 @@ div {
     }
     h3 {
       line-height: 26px;
-      font-size: 26px;
+      font-size: 20px;
       font-weight: 700;
       color: #003169;
       text-align: center; /* Center-align text */
@@ -112,7 +112,7 @@ div {
       display: flex;
       justify-content: center; /* Center-align text vertically */
       span {
-        font-size: 20px;
+        font-size: 18px;
       }
     }
   }
@@ -153,8 +153,8 @@ div {
       margin-bottom: 30px;
     }
     h3 {
-      font-size: 20px;
-      font-weight: 700;
+      font-size: 18px;
+      font-weight: 600;
       color: #003169;
       text-align: center; /* Center-align text */
       align-items: center;
@@ -261,8 +261,8 @@ div {
     margin-bottom: 30px;
   }
   h3 {
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 600;
     color: #003169;
     // text-align: center; /* Center-align text */
     align-items: center;
@@ -276,11 +276,26 @@ div {
 .container5 {
   div {
     background-color: azure;
+    border: 3px solid #003169;
+    border-radius: 200px;
+    margin-bottom: 15px;
     h1 {
       margin: 30px 0px;
       font-size: 30px;
       text-align: center;
       font-weight: 1000;
+    }
+    h3 {
+      margin: 20px 0px;
+      font-size: 24px;
+      text-align: center;
+      font-weight: 700;
+    }
+    p {
+      margin: 10px 0px;
+      font-size: 16px;
+      text-align: center;
+      font-weight: 400;
     }
   }
 }

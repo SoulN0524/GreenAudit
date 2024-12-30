@@ -23,7 +23,7 @@
     <!-- 右側聊天界面 -->
     <div class="chat-interface">
       <div class="chat-header">聊天介面</div>
-      <div class="chat-content" id="chatContent">
+      <div #chatContainer class="chat-content" id="chatContent">
         <div
           *ngFor="let message of messages"
           [ngClass]="{
@@ -41,6 +41,8 @@
           id="chatInput"
           placeholder="輸入訊息..."
           [(ngModel)]="chatInput"
+          (keyup.enter)="sendMessage()"
+          autocomplete="off"
         />
         <button id="sendButton" (click)="sendMessage()">發送</button>
       </div>

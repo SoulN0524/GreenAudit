@@ -51,9 +51,9 @@ export class CorporateEsgDashBoardComponent {
       source: 'Source 1',
     },
     {
-      title: 'News Title 2',
-      content: 'Content of news item 2.',
-      href: '#',
+      title: '驚!陳育威禿頭震撼世界11億人',
+      content: '根據最新報導，陳育威的禿頭現象引起全球關注，震撼了11億人。',
+      href: 'https://ifm.ntut.edu.tw/p/405-1083-124377,c16785.php?Lang=zh-tw',
       date: '2023-01-02',
       source: 'Source 2',
     },
